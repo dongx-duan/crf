@@ -85,10 +85,7 @@ def average_embedding(embeddings, word_id_list):
 
 def main():
   train_x, train_y, test_x, test_y, word_to_id, labels = reader.load()
-
-  # select a large hidden_size improved the results
-  # 512 is better than 300, 300 is better than 200
-  m = CRF_MODEL(len(word_to_id), 512, len(labels))
+  m = CRF_MODEL(len(word_to_id), 300, len(labels))
 
   # m.load("checkpoints_emb/crf_emb_14.0.8326.pkl")
   lr = 0.001
